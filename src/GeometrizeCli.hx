@@ -84,10 +84,8 @@ class GeometrizeCli {
     }
     
     var bitmap = readPNGImage(new Path(inputPath));
-
-    var avgColor = Util.getAverageImageColor(bitmap);
     
-    var runner = new ImageRunner(bitmap, avgColor);
+    var runner = new ImageRunner(bitmap, 0);
 
     var shapes: Array<ShapeResult> = [];
 
@@ -104,17 +102,11 @@ class GeometrizeCli {
 
       // Insert a svg <rect> for the background
 
-      var hex = rgbToHex(avgColor.r, avgColor.b, avgColor.g);
 
-      var splitData = data.split("\n");
-
-      splitData.insert(2, "<rect width=\""+bitmap.width+"\" height=\""+bitmap.height+"\" fill=\""+hex+"\" />");
-
-      var finishedData = splitData.join("\n");
 
       var svgPath = new Path(outputPath).toString();
       
-      sys.io.File.saveContent(svgPath, finishedData);
+      sys.io.File.saveContent(svgPath, data);
 
       if (fileExt == "png") {
         var programPath = Path.directory(Sys.programPath());
