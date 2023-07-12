@@ -5,17 +5,20 @@ CLI version of the haxe package [Geometrize Haxe](https://github.com/Tw1ddle/geo
 Build the executable and use it like this:
 
 ```
-executable -i input.png -o output.svg -s 500 -t "circle"
+executable -i input.png -o output.svg -s 500 -t "circle rotated_ellipse"
 ```
 
 ## Parameters
 
-| Parameter        | Default Value | Description                                                                           |
-| ---------------- | ------------- | ------------------------------------------------------------------------------------- |
-| -i \<file>       | /             | Your input file. Required parameter.                                                  |
-| -o \<file>       | /             | Your output file. Required parameter.                                                 |
-| -w \<width>      | /             | Width of the png in pixels. The height will be fit to that width. Required parameter. |
-| -bg \<css color> | #000000       | Background color of the png. Optional parameter.                                      |
+| Flag | Description                                                        | Default                                                                                                                                             |
+| ---- | ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| i    | The filepath to load the input image from                          | ~                                                                                                                                                   |
+| o    | The filepath to save the output image, JSON data or SVG            | ~                                                                                                                                                   |
+| t    | The types of shapes to use                                         | One or more of: rectangle, rotated_rectangle, triangle, ellipse, rotated_ellipse, circle, line, quadratic_bezier, polyline (**separated by space**) |
+| s    | Number of shapes to use in the output image                        | 200                                                                                                                                                 |
+| c    | The number of candidate shapes per shape added to the output image | 500                                                                                                                                                 |
+| m    | The maximum number of times to mutate each candidate shape         | 100                                                                                                                                                 |
+| a    | The opacity (0-255) of each shape added to the output image        | 128                                                                                                                                                 |
 
 # How to build
 
