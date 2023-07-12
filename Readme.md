@@ -27,4 +27,4 @@ Build with `haxe build.hxml`
 
 Copy the `GeometrizeCli` executable and put it in a directory that's in your PATH
 
-Download my [SVG to Image CLI](https://github.com/ErikGaDev/svg-to-img-cli/releases) and put it in the same directory as the executable if you want to save the geometrized output to an SVG.
+Download my [SVG to Image CLI](https://github.com/ErikGaDev/svg-to-img-cli/releases) and put it in the same directory as the executable if you want to save the geometrized output to a PNG.
