@@ -1,0 +1,4 @@
+-lib hxcpp geometrize-haxe arguable format svg openfl lime
+-cp src
+-main src.GeometrizeCli
+--cpp bin/cpp
